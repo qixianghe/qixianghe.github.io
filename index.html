@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html>
@@ -11,7 +12,7 @@
 h1{color: blue; font-family: Georgia; font-size: 100%; text-align: center}
 #timer {color: blue; font-family: Georgia; font-size: 200%; text-align: center}
 #words {color: blue; font-family: Georgia; font-size: 200%; text-align: center}
-textarea{color: black; font-family: Georgia; font-size: 150%;text-align: center}
+textarea{color: black; font-family: Georgia; font-size: 150%; text-align: center; display: block; margin-left: auto;margin-right: auto}
 p{color: black; font-family: Georgia; font-size: 200%;text-align: center}
 </style>
 
@@ -20,11 +21,11 @@ p{color: black; font-family: Georgia; font-size: 200%;text-align: center}
 Use this to help you write 500 words a day
 </h1>
   
-<div class="justified">
-<textarea rows="25" cols="70">
+
+<textarea display: block; rows="25" cols="70">
 500 words a day, keeps the supervisor away.
 </textarea>
-</div>
+
 
 
 <p> Time left:</p>
@@ -40,14 +41,11 @@ Use this to help you write 500 words a day
     var seconds = total - (minutes * 60);
     var result = minutes + ":" + seconds;
     document.getElementById("timer").innerHTML = result;
-
     var input = document.querySelectorAll('textarea')[0];
     var words = input.value.match(/\b[-?(\w+)?]+\b/gi).length;
     
     document.getElementById("words").innerHTML = words;
-
   },1000)
-
 </script>
 
 <b> 
