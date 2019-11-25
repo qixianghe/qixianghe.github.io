@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>
+500 WORDS A DAY
+</title>
+</head>
+
+<style>
+h1{color: blue; font-family: Georgia; font-size: 32}
+#timer {color: blue; font-family: Georgia; font-size: 200%}
+#words {color: blue; font-family: Georgia; font-size: 200%}
+textarea{color: black; font-family: Georgia; font-size: 150%}
+p{color: black; font-family: Georgia; font-size: 200%}
+</style>
+
+<body>
+<h1>
+Use this to help you write 500 words a day
+</h1>
+
+<textarea rows="25" cols="70">
+500 words a day, keeps the supervisor away.
+</textarea>
+
+<p> Time left:</p>
+<p id = "timer"> No time like the present </p>
+<p> Total words:</p>
+<p id = "words"> Words </p>
+
+<script>
+  var total = 600
+  setInterval(function(){
+    total -= 1
+    var minutes = Math.floor(total/60);
+    var seconds = total - (minutes * 60);
+    var result = minutes + ":" + seconds;
+    document.getElementById("timer").innerHTML = result;
+
+    var input = document.querySelectorAll('textarea')[0];
+    var words = input.value.match(/\b[-?(\w+)?]+\b/gi).length;
+    
+    document.getElementById("words").innerHTML = words;
+
+  },1000)
+
+</script>
+
+<b> 
+</body>
+
+</html>
